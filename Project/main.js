@@ -52,3 +52,4 @@ async function getData(apiURL){
     }
 }
 getData(apiURL);
+
