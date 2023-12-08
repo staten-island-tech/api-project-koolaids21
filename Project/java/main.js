@@ -46,10 +46,16 @@ async function getData(apiURL){
     const response = await fetch(apiURL);
     const data = await response.json();
     console.log(data);
-    document.getElementById("api-response").textContent = data.displayName;
     } catch (error) {
         console.log(error);
     }
 }
 getData(apiURL);
+
+const apiResponseDOM = document.getElementById("api-response");
+const putintoHTML = async () => {
+    const thing = await getData(apiURL);
+    apiResponseDOM.textContent = `Name: ${thing.displayName}`;
+};
+putintoHTML();      
 
