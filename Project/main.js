@@ -10,25 +10,45 @@
 //  { console.log(result);
 // });
 //Rest API
-const URL = `https://valorant-api.com/`;
+// const URL = `https://valorant-api.com/v1/agents`;
 
-async function getData(URL){
-    try {
+// async function getData(URL){
+//     try {
 
- const response = await fetch(URL);
-    console.log(response);
-    if(response.status != 200){
-        throw new Error(response.statusText);
-    }
-    //take response from serevr and converts it to JSON
-    const data = await response.json();
-    document.querySelector("h1").textContent = data.agent
-    document.querySelector("h2").textContent = data.author
-    }catch(error){ 
-        document.querySelector("h1").textContent = error;
-        document.querySelector("h1").textContent = "Please search";
+//  const response = await fetch(URL);
+//     console.log(response);
+//     if(response.status != 200){
+//         throw new Error(response.statusText);
+//     }
+//     //take response from serevr and converts it to JSON
+//     const data = await response.json();
+//     document.querySelector("h1").textContent = data.agent
+//     }catch(error){ 
+//         document.querySelector("h1").textContent = error;
+//         document.querySelector("h1").textContent = "Please search";
 
-    }
+//     }
     
+// }
+// getData(URL);
+
+
+
+// console.log(fetch('https://valorant-api.com/v1/agents/23')
+// .then(res => res.json())
+// .then(data => console.log(data))
+// )
+
+const apiURL = "https://valorant-api.com/v1/agents";
+
+async function getData(apiURL){
+    try {
+    const response = await fetch(apiURL);
+    const data = await response.json();
+    console.log(data);
+    document.getElementById("api-response").textContent = data.displayName;
+    } catch (error) {
+        console.log(error);
+    }
 }
-getData(URL);
+getData(apiURL);
