@@ -39,13 +39,19 @@
 // .then(data => console.log(data))
 // )
 
-const apiURL = "https://valorant-api.com/v1/agents";
+const apiURL = "https://developer.riotgames.com/apis#champion-v3/GET_getChampionInfo/RGAPI-9c35e733-bda0-4dd6-962e-c280f70b5f72";
+
+console.log(fetch(apiURL));
+fetch(apiURL)
+.then((response) => response.json())
+.then((data) => console.log(data));
 
 async function getData(apiURL){
     try {
     const response = await fetch(apiURL);
     const data = await response.json();
     console.log(data);
+    return data;
     } catch (error) {
         console.log(error);
     }
@@ -54,8 +60,11 @@ getData(apiURL);
 
 const apiResponseDOM = document.getElementById("api-response");
 const putintoHTML = async () => {
-    const thing = await getData(apiURL);
-    apiResponseDOM.textContent = `Name: ${thing.displayName}`;
+    const thing = await fetch(apiURL);
+    console.log(thing)
+    apiResponseDOM.textContent = `Name: ${thing.champion}
+        `;
+
 };
 putintoHTML();      
 
