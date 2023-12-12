@@ -39,7 +39,7 @@
 // .then(data => console.log(data))
 // )
 
-const apiURL = "https://developer.riotgames.com/apis#champion-v3/GET_getChampionInfo/RGAPI-9c35e733-bda0-4dd6-962e-c280f70b5f72";
+const apiURL = "https://na.api.riotgames.com/val/content/v1/contents?api_key=RGAPI-89dd17eb-c3e7-441e-a95c-9886b381b572";
 
 console.log(fetch(apiURL));
 fetch(apiURL)
@@ -62,7 +62,7 @@ const apiResponseDOM = document.getElementById("api-response");
 const putintoHTML = async () => {
     const thing = await fetch(apiURL);
     console.log(thing)
-    apiResponseDOM.textContent = `Name: ${thing.champion}
+    apiResponseDOM.textContent = `Name: ${thing.characters}
         `;
 
 };
