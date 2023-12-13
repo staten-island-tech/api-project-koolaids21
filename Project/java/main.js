@@ -10,6 +10,7 @@
 //  { console.log(result);
 // });
 //Rest API
+
 // const URL = `https://valorant-api.com/v1/agents`;
 
 // async function getData(URL){
@@ -39,7 +40,7 @@
 // .then(data => console.log(data))
 // )
 
-const apiURL = "https://na.api.riotgames.com/val/content/v1/contents?api_key=RGAPI-89dd17eb-c3e7-441e-a95c-9886b381b572";
+const apiURL = "https://valorant-api.com/v1/weapons";
 
 console.log(fetch(apiURL));
 fetch(apiURL)
@@ -60,11 +61,8 @@ getData(apiURL);
 
 const apiResponseDOM = document.getElementById("api-response");
 const putintoHTML = async () => {
-    const thing = await fetch(apiURL);
-    console.log(thing)
-    apiResponseDOM.textContent = `Name: ${thing.characters}
-        `;
-
+    const thing = await fetch(apiURL)
+    apiResponseDOM.inner = `Name: ${thing.weaponStats.fireRate}`;
 };
 putintoHTML();      
 
