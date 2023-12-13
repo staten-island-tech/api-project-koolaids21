@@ -62,7 +62,7 @@ getData(apiURL);
 const apiResponseDOM = document.getElementById("api-response");
 const putintoHTML = async () => {
     const thing = await fetch(apiURL)
-    apiResponseDOM.inner = `Name: ${thing.weaponStats.fireRate}`;
+    apiResponseDOM.textContent = `Name: ${thing.weaponStats.fireRate}`;
 };
 putintoHTML();      
 
