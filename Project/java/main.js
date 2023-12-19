@@ -40,18 +40,27 @@
 // .then(data => console.log(data))
 // )
 
-const apiURL = "https://valorant-api.com/v1/weapons";
+const apiURL = "https://valorant-api.com/v1/agents";
 
 console.log(fetch(apiURL));
 fetch(apiURL)
 .then((response) => response.json())
 .then((data) => console.log(data));
 
+
+const DOMSELECTORs = {
+agent: document.getElementById("agent"),
+
+}
+
+
+
+
 async function getData(apiURL){
     try {
     const response = await fetch(apiURL);
     const data = await response.json();
-    console.log(data);
+    console.log(data.data);
     return data;
     } catch (error) {
         console.log(error);
@@ -59,10 +68,16 @@ async function getData(apiURL){
 }
 getData(apiURL);
 
-const apiResponseDOM = document.getElementById("api-response");
+const apiResponseDOM = document.getElementById("agent");
 const putintoHTML = async () => {
     const thing = await fetch(apiURL)
-    apiResponseDOM.textContent = `Name: ${thing.weaponStats.fireRate}`;
-};
-putintoHTML();      
+    apiResponseDOM.textContent = `Name: ${thing.uuid}`;
+    DOMSELECTORs.agent.insertAdjacentHTML(
+        "beforeend",
+       putintoHTML()
+
+    );
+}; 
+putintoHTML()
+
 
