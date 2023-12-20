@@ -69,8 +69,12 @@ function insertCard(arr) {
   arr.forEach((agent) => {
     DOMSELECTORS.agent.insertAdjacentHTML(
       "beforeend",
-      `<div class="card">
-        <h2 class="name">${agent.displayName}</h2>
+      `<div class="container">
+        <div class="card">
+          <h1 class="name">${agent.displayName}</h1>
+
+          <h2 class="name">${agent.description}</h2>
+        </div>
       </div>`
     );
   });
