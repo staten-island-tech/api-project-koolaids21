@@ -72,17 +72,10 @@ function insertCard(arr) {
       `<div class="container">
         <div class="card">
           <h1 class="name">${agent.displayName}</h1>
-
-          <h2 class="name">${agent.description}</h2>
+          <img src="${agent.displayIconSmall}" alt="">
+          <p class="name">${agent.description}</p>
         </div>
       </div>`
     );
   });
 }
-// const apiResponseDOM = document.getElementById("agent");
-// const putintoHTML = async () => {
-//   const thing = await fetch(apiURL);
-//   apiResponseDOM.textContent = `Name: ${thing.uuid}`;
-//   DOMSELECTORs.agent.insertAdjacentHTML("beforeend", putintoHTML());
-// };
-// putintoHTML();
