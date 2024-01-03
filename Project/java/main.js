@@ -40,6 +40,7 @@
 
 const DOMSELECTORS = {
   agent: document.getElementById("agent"),
+  Duelist: document.getElementById("Duelist")
 };
 
 const apiURL = "https://valorant-api.com/v1/agents";
@@ -73,9 +74,23 @@ function insertCard(arr) {
         <div class="card">
           <h1 class="name">${agent.displayName}</h1>
           <img src="${agent.displayIconSmall}" alt="">
-          <p class="name">${agent.description}</p>
+          <h2 class="name">${agent.description}</h2>
         </div>
       </div>`
     );
   });
 }
+
+
+
+DOMSELECTORS.Duelist.addEventListener("click", ()=>{
+  const duelist = apiURL.filter((x)=>
+  x.role.displayName.includes("Duelist")
+  );
+  DOMSELECTORS.agent.insertAdjacentHTML(
+    "beforeend",
+   duelist.Join("")
+  );
+});
+
+
