@@ -40,7 +40,9 @@
 
 const DOMSELECTORS = {
   agent: document.getElementById("agent"),
-  Duelist: document.getElementById("Duelist")
+  Duelist: document.getElementById("Duelist"),
+  column: document.querySelector(".column"),
+  searchBtn: document.querySelector(".search-btn"),
 };
 
 const apiURL = "https://valorant-api.com/v1/agents";
@@ -81,16 +83,18 @@ function insertCard(arr) {
   });
 }
 
+// DOMSELECTORS.Duelist.addEventListener("click", () => {
+//   const duelist = apiURL.filter((x) => x.role.displayName.includes("Duelist"));
+//   DOMSELECTORS.agent.insertAdjacentHTML("beforeend", duelist.Join(""));
+// });
 
-
-DOMSELECTORS.Duelist.addEventListener("click", ()=>{
-  const duelist = apiURL.filter((x)=>
-  x.role.displayName.includes("Duelist")
-  );
-  DOMSELECTORS.agent.insertAdjacentHTML(
-    "beforeend",
-   duelist.Join("")
-  );
+DOMSELECTORS.searchBtn.addEventListener("click", function () {
+  const agentName = prompt("Enter agent name:");
+  if (agentName) {
+    const filteredAgents = data.data.filter(
+      (agent) => agent.displayName.toLowerCase() === agentName.toLowerCase()
+    );
+    DOMSELECTORS.column.innerHTML = "";
+    insertCard(filteredAgents);
+  }
 });
-
-

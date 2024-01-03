@@ -78,9 +78,7 @@ body {
   transition: 1s;
   position: relative;
   height: 400px;
-  transition-duration: 0.5s;
   overflow: visible;
-  transform: scale(1.2);
   height: 400;
 }
 
