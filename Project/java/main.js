@@ -42,7 +42,7 @@ const DOMSELECTORS = {
   agent: document.getElementById("agent"),
   Duelist: document.getElementById("Duelist"),
   column: document.querySelector(".column"),
-  searchBtn: document.querySelector(".search-btn"),
+  searchBtn: document.querySelector(".searchBtn"),
 };
 
 const apiURL = "https://valorant-api.com/v1/agents";
@@ -73,12 +73,11 @@ function insertCard(arr) {
     DOMSELECTORS.agent.insertAdjacentHTML(
       "beforeend",
       `<div class="container">
-        <div class="card">
+        
           <h1 class="name">${agent.displayName}</h1>
           <img src="${agent.displayIconSmall}" alt="">
           <h2 class="name">${agent.description}</h2>
-        </div>
-      </div>`
+        </div>`
     );
   });
 }
