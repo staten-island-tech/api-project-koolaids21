@@ -53,13 +53,10 @@ DOMSELECTORS.Duelist.addEventListener("click", async () => {
   try {
     const response = await fetch(apiURL);
     const data = await response.json();
-
     const duelists = data.data.filter(
       (agent) => agent.role && agent.role.displayName === "Duelist"
     );
-
     console.log(duelists);
-
     if (duelists.length > 0) {
       insertCard(duelists);
     } else {
@@ -74,13 +71,10 @@ DOMSELECTORS.Sentinel.addEventListener("click", async () => {
   try {
     const response = await fetch(apiURL);
     const data = await response.json();
-
     const Sentinels = data.data.filter(
       (agent) => agent.role && agent.role.displayName === "Sentinel"
     );
-
     console.log(Sentinels);
-
     if (Sentinels.length > 0) {
       insertCard(Sentinels);
     } else {
@@ -95,13 +89,10 @@ DOMSELECTORS.Controller.addEventListener("click", async () => {
   try {
     const response = await fetch(apiURL);
     const data = await response.json();
-
     const Controllers = data.data.filter(
       (agent) => agent.role && agent.role.displayName === "Controller"
     );
-
     console.log(Controllers);
-
     if (Controllers.length > 0) {
       insertCard(Controllers);
     } else {
