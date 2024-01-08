@@ -35,20 +35,17 @@ DOMSELECTORS.Initiator.addEventListener("click", async () => {
   try {
     const response = await fetch(apiURL);
     const data = await response.json();
-
     const Initiators = data.data.filter(
       (agent) => agent.role && agent.role.displayName === "Initiator"
     );
-
     console.log(Initiators);
-
     if (Initiators.length > 0) {
       insertCard(Initiators);
     } else {
       console.log("No Initiators found.");
     }
   } catch (error) {
-    console.error("Error filtering data:", error);
+    console.error("ERROR FILTERING", error);
   }
 });
 
@@ -69,7 +66,7 @@ DOMSELECTORS.Duelist.addEventListener("click", async () => {
       console.log("No Duelists found.");
     }
   } catch (error) {
-    console.error("Error filtering data:", error);
+    console.error("ERROR FILTERING", error);
   }
 });
 
@@ -90,7 +87,7 @@ DOMSELECTORS.Sentinel.addEventListener("click", async () => {
       console.log("No Sentinels found.");
     }
   } catch (error) {
-    console.error("Error filtering data:", error);
+    console.error("ERROR FILTERING:", error);
   }
 });
 
@@ -111,7 +108,7 @@ DOMSELECTORS.Controller.addEventListener("click", async () => {
       console.log("No Controller found.");
     }
   } catch (error) {
-    console.error("Error filtering data:", error);
+    console.error("ERROR FILTERING data:", error);
   }
 });
 
