@@ -108,24 +108,11 @@ function insertCard(x) {
   x.forEach((agent) => {
     DOMSELECTORS.agent.insertAdjacentHTML(
       "beforeend",
-      `<div class="container">
-          <div class="card">
+      ` <div class="card">
             <h1 class="name">${agent.displayName}</h1>
               <img src="${agent.displayIconSmall}" alt="">
             <h2 class="name">${agent.description}</h2>
-          </div>
         </div>`
     );
   });
 }
-
-// DOMSELECTORS.column.addEventListener("click", function () {
-//   const agentName = prompt("Enter agent name:");
-//   if (agentName) {
-//     const filteredAgents = data.data.filter(
-//       (agent) => agent.displayName.toLowerCase() === agentName.toLowerCase()
-//     );
-//     DOMSELECTORS.column.innerHTML = "";
-//     insertCard(filteredAgents);
-//   }
-// });
