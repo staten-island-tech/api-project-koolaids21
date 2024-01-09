@@ -2,7 +2,7 @@ body,
 html {
     font-size: 10px;
     box-sizing: border-box;
-    background-color: #2998ff;
+    background-color: var(--light-blue)   ;
 }
 
 
@@ -52,7 +52,7 @@ html {
 .card {
   display: flex;
   margin: 3rem 0;
-  height: 500px;
+  height: 560px;
   width: 27vw;
   background-color: rgba(65, 65, 150, 0.6);
   flex-direction: column;
@@ -84,5 +84,6 @@ html {
 
 .Maintitle {
   text-align: center;
+  font-size: 50px;  
   
 }
