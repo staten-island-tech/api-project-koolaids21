@@ -111,8 +111,7 @@ function insertCard(x) {
       ` <div class="card">
             <h1 class="name">${agent.displayName}</h1>
               <img src="${agent.displayIconSmall}" alt="">
-            <h2 class="name">${agent.description}</h2>
-            <img src="${agent.role.displayIcon}">
+            <h2 class="name">${agent.description}</h2>  
         </div>`
     );
   });
